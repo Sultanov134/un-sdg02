@@ -34,7 +34,7 @@ export class unSdg02 extends DDDSuper(I18NMixin(LitElement)) {
       label: {type: String},
       loading: {type: String, reflect: true},
       fetchPriority: {type: String, reflect: true},
-      colorOnly: {type: Boolean},
+      colorOnly: {type: Boolean}
     };
   }
 
@@ -113,12 +113,12 @@ export class unSdg02 extends DDDSuper(I18NMixin(LitElement)) {
 
   // Lit render the HTML
   render() {
-    let imgSrc = new URL(`../public/svgs/goal-${this.goal}.svg`, import.meta.url).href;
+    let imgSrc = new URL(`../lib/svgs/goal-${this.goal}.svg`, import.meta.url).href;
     if (this.goal ==='all') {
-      imgSrc = new URL(`../public/svgs/${this.goal}.svg`, import.meta.url).href;      
+      imgSrc = new URL(`../lib/svgs/${this.goal}.svg`, import.meta.url).href;      
     }
     else if (this.goal === 'circle'){
-      imgSrc = new URL(`../public/svgs/${this.goal}.png`, import.meta.url).href;
+      imgSrc = new URL(`../lib/svgs/${this.goal}.png`, import.meta.url).href;
     }
     return html`
     <style>
@@ -146,7 +146,7 @@ export class unSdg02 extends DDDSuper(I18NMixin(LitElement)) {
 
   
   static get haxProperties() {
-    return new URL(`../lib/${this.tag}.haxProperties.json`, import.meta.url)
+    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
       .href;
   }
 }
