@@ -146,7 +146,7 @@ export class unSdg02 extends DDDSuper(I18NMixin(LitElement)) {
 
   
   static get haxProperties() {
-    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
+    return new URL(`../lib/${this.tag}.haxProperties.json`, import.meta.url)
       .href;
   }
 }
